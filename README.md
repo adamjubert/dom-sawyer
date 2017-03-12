@@ -21,63 +21,63 @@ Download `./domSawyer/`, include it in your project's directory and include the 
 ## Features
 Select DOM elements by their class, ids, or HTML element type by using the `$ds` selector. This will return an array of interactive `domSawyer`-wrapped objects.
 
-##### `addClass(className)`
+#### `addClass(className)`
 Adds a class to the element.
 
-##### `append(arg)`
+#### `append(arg)`
 The given `arg` will be added to each selected element.
 
-##### `$ds.ajax(options)`
+#### `$ds.ajax(options)`
 Performs an asynchronous `XMLHTTPRequest` using the `options` object. Return a chainable `Promise` once the request returns.
 
-##### `children()`
+#### `children()`
 Returns all children of the element.
 
-##### `classList()`
+#### `classList()`
 Returns all classes attached the the element.
 
-##### `each(callback)`
+#### `each(callback)`
 Iterates through each element and performs the callback on it.
 
-##### `elements()`
+#### `elements()`
 Returns the elements.
 
-##### `empty()`
+#### `empty()`
 Removes all inner HTML properties from the element.
 
-##### `find(selector)`
+#### `find(selector)`
 Retrieve all descendants of each element, filtered by the `selector` string. The returned collection will contain all matching elements.
 
-##### `first()`
+#### `first()`
 Returns the element's first child.
 
-##### `hasClass(className)`
+#### `hasClass(className)`
 Returns `true` or `false` depending on whether the element has the given `className`.
 
-##### `html(htmlContent)`
+#### `html(htmlContent)`
 If `htmlContent` is a string, it will be added to each element.
 If no argument is given, the first element's HTML will be returned.
 
-##### `last()`
+#### `last()`
 Returns the element's last child.
 
-##### `length()`
+#### `length()`
 Returns the elements length as an integer.
 
-##### `on(eventName, callback)`
+#### `on(eventName, callback)`
 Attaches an event handler function to the element.
 
-##### `off(eventName)`
+#### `off(eventName)`
 Removes the specified event handler from the element.
 
-##### `parent()`
+#### `parent()`
 Returns the element's parent node.
 
-##### `remove()`
+#### `remove()`
 Removes the element.
 
-##### `removeClass(className)`
+#### `removeClass(className)`
 Removes the given `className` from the element's classes.
 
-##### `toggleClass(className)`
+#### `toggleClass(className)`
 Turns `className` on or off depending on its current state.
