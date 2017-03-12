@@ -21,7 +21,7 @@ Download `./domSawyer/`, include it in your project's directory and include the 
 ## Features
 Select DOM elements by their class, ids, or HTML element type by using the `$ds` selector. This will return an array of interactive `domSawyer`-wrapped objects.
 
-`### addClass(className)`
+### `addClass(className)`
 Adds a class to the element.
 
 `### append(arg)`
