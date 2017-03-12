@@ -3,8 +3,10 @@ class DomSawyer {
     this.htmlElements = htmlElements;
   }
 
-  addClass(newClass) {
-    this.each(el => el.classList.add(newClass));
+  addClass(className) {
+    this.htmlElements.forEach(el => {
+      el.classList.add(className);
+    });
   }
 
   append(arg) {
@@ -34,9 +36,18 @@ class DomSawyer {
     return new DomSawyer(children);
   }
 
+  classList(className) {
+    return this.htmlElements[0].classList;
+  }
+
   each(callback) {
     this.htmlElements.forEach(callback);
   }
+
+  elements() {
+    return this.htmlElements;
+  }
+
 
   empty() {
     this.each((el) => (el.innerHTML = ""));
@@ -51,12 +62,36 @@ class DomSawyer {
     return new DomSawyer(foundElements);
   }
 
+  first() {
+    let children = [];
+    this.htmlElements.forEach(el => {
+      children = children.concat(Array.from(el.children));
+    });
+    return new DomSawyer(children.slice(0, 1));
+  }
+
+  hasClass(className) {
+    return this.htmlElements[0].classList.contains(className);
+  }
+
   html(str) {
     if (str) {
       this.each((el) => (el.innerHTML = str));
     } else {
       return this.htmlElements[0].innerHTML;
     }
+  }
+
+  last() {
+    let children = [];
+    this.htmlElements.forEach(el => {
+      children = children.concat(Array.from(el.children));
+    });
+    return new DomSawyer(children.slice(-1));
+  }
+
+  length() {
+    return this.htmlElements.length;
   }
 
   on(eventName, callback) {
@@ -98,6 +133,18 @@ class DomSawyer {
 
   remove() {
     this.each(el => el.parentElement.removeChild(el));
+  }
+
+  removeClass(className) {
+    this.htmlElements.forEach(el => {
+      el.classList.remove(className);
+    });
+  }
+
+  toggleClass(className) {
+    this.htmlElements.forEach(el => {
+      el.classList.toggle(className);
+    });
   }
 
 }
